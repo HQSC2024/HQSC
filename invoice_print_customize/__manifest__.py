@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'account', 'l10n_sa', 'l10n_gcc_invoice', 'web'],
+    'depends': ['base', 'account', 'l10n_sa', 'l10n_gcc_invoice', 'web', 'bi_order_line_with_sequence_number'],
 
     # always loaded
     'data': [
