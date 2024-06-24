@@ -53,16 +53,16 @@
 
 
 
-        <template id="mrp_report" inherit_id="mrp.report_mrp_production_components">
-            <xpath expr="//table[1]/thead/tr/th[1]" position="before">
-                <th name="th_d" class="text-start">No.</th>
-            </xpath>
-            <xpath expr="//table[1]/tbody/tr/td[1]" position="before">
-                <td>
-                    <span t-field="raw_line.mrp_sequence_no" />
-                </td>
-            </xpath>
-        </template>
+<!--        <template id="mrp_report" inherit_id="mrp.report_mrp_production_components">-->
+<!--            <xpath expr="//table[1]/thead/tr/th[1]" position="before">-->
+<!--                <th name="th_d" class="text-start">No.</th>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//table[1]/tbody/tr/td[1]" position="before">-->
+<!--                <td>-->
+<!--                    <span t-field="raw_line.mrp_sequence_no" />-->
+<!--                </td>-->
+<!--            </xpath>-->
+<!--        </template>-->
 
         <template id="purchase_agreement_report"
             inherit_id="purchase_requisition.report_purchaserequisition_document">

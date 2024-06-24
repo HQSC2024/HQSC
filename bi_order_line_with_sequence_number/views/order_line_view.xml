@@ -24,16 +24,16 @@
         </field>
     </record>
 
-    <record id="mrp_inherit_view" model="ir.ui.view">
-        <field name="name">mrp.production.form.inherit</field>
-        <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp.mrp_production_form_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//page[@name='components']//field[@name='move_raw_ids']//tree//field[@name='product_id']" position="before">
-                <field name="mrp_sequence_no" groups="bi_order_line_with_sequence_number.access_display_order_line_number"/>
-            </xpath>
-        </field>
-    </record>
+<!--    <record id="mrp_inherit_view" model="ir.ui.view">-->
+<!--        <field name="name">mrp.production.form.inherit</field>-->
+<!--        <field name="model">mrp.production</field>-->
+<!--        <field name="inherit_id" ref="mrp.mrp_production_form_view" />-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//page[@name='components']//field[@name='move_raw_ids']//tree//field[@name='product_id']" position="before">-->
+<!--                <field name="mrp_sequence_no" groups="bi_order_line_with_sequence_number.access_display_order_line_number"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record id="purchase_order_inherit_view" model="ir.ui.view">
         <field name="name">purchase.order.form.inherit</field>

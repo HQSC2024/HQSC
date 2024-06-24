@@ -11,11 +11,11 @@
             <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
                 <div>
                     <div class="row mb8">
-                        <div class="col-7 text-end">
+                        <div class="col-6">
                             <img t-if="company.logo" style="max-height: 180px; max-width: 130%;"
                                  t-att-src="image_data_uri(company.logo)" alt="Logo"/>
                         </div>
-                        <div class="col-5 text-end mb4">
+                        <div class="col-6 text-end mb4">
                             <div class="mt0 h4" t-if="company.report_header" t-field="company.report_header">Company
                                 tagline
                             </div>
@@ -195,7 +195,8 @@
                                     <span class="text-nowrap" t-field="line.price_unit"/>
                                 </td>
                                 <td class="text-end">
-                                    <span t-field="line.quantity"/>
+                                    <span t-if="float(line.quantity) == int(line.quantity)" t-field="line.quantity" t-options='{"widget": "float", "precision": 0}'/>
+                                    <span t-else=""  t-field="line.quantity"/>
                                     <span t-field="line.product_uom_id" groups="uom.group_uom"/>
                                 </td>
                                 <td name="account_invoice_line_name" class="text-end">
@@ -324,10 +325,10 @@
                         <span t-if="0">
                             Tax Invoice
                         </span>
-                        <span t-elif="o.move_type == 'out_invoice' and o.state == 'draft'">
+                        <span t-elif="0">
                             Draft Invoice
                         </span>
-                        <span t-elif="o.move_type == 'out_invoice' and o.state == 'cancel'">
+                        <span t-elif="0">
                             Cancelled Invoice
                         </span>
                         <span t-elif="0">
@@ -353,10 +354,10 @@
                         <span t-if="0">
                             فاتورة ضريبية
                         </span>
-                        <span t-elif="o.move_type == 'out_invoice' and o.state == 'draft'">
+                        <span t-elif="0">
                             مسودة فاتورة
                         </span>
-                        <span t-elif="o.move_type == 'out_invoice' and o.state == 'cancel'">
+                        <span t-elif="0">
                             فاتورة ملغاة
                         </span>
                         <span t-elif="0">
