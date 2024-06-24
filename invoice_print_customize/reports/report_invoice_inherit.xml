@@ -152,7 +152,7 @@
                         </th>
                         <th name="th_code" class="text-end">
                             <span>
-                                .م
+                                م
                             </span>
                             <br/>
                             <span>
@@ -237,74 +237,12 @@
                 </tbody>
             </table>
         </xpath>
-        <xpath expr="//t[contains(@t-set, 'address')]" position="replace">
-            <style>
-                .tblbordr {
-                text-align: center;
-                border: 1px solid black;
-                margin: 10px;
-                background-color:white;
-                color: black;
-                width: 100%;
-                }
-            </style>
-            <div class="row">
-                <div class="col-4">
-                    <t t-set="information_block">
-                        <p>
-                            <img t-if="o.l10n_sa_qr_code_str" style="display:block;"
-                                 t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', quote_plus(o.l10n_sa_qr_code_str), 200, 200)"/>
-                        </p>
-                    </t>
-                </div>
-                <div class="col-8" t-if="o.move_type == 'out_invoice'">
-                    <table class="tblbordr" dir="rtl">
-                        <thead>
-                            <tr>
-                                <th>اسم العميل</th>
-                                <th>
-                                    <span t-esc="o.partner_id.display_name"/>
-                                </th>
-                                <th>Customer Name</th>
-                            </tr>
-                            <tr t-if="o.partner_id.street">
-                                <th>العنوان</th>
-                                <th>
-                                    <span t-esc="o.partner_id.street"/>
-                                </th>
-                                <th>Address</th>
-                            </tr>
-                            <tr t-if="o.partner_id.vat">
-                                <th>رقم التسجيل الضريبي</th>
-                                <th>
-                                    <span t-esc="o.partner_id.vat"/>
-                                </th>
-                                <th>Vat</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-                <div t-else="">
-                    <t t-set="address">
-                        <address t-field="o.partner_id"
-                                 t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"
-                                 style="text-align: right"/>
-                        <div t-if="o.partner_id.vat" class="mt16" style="text-align: right">
-                            <t t-if="o.company_id.account_fiscal_country_id.vat_label"
-                               t-out="o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label"/>
-                            <t t-else="">Tax ID</t>:
-                            <span t-field="o.partner_id.vat"/>
-                        </div>
-                    </t>
-                </div>
-            </div>
 
-        </xpath>
         <xpath expr="//div[@id='informations']" position="replace">
-            <div class="row">
+            <div>
                 <div class="col-4"/>
                 <!-- Add a new attribute or modify an existing one based on condition -->
-                <div class="col-8" t-if="o.move_type == 'out_invoice'">
+                <div class="col-8 right-align" t-if="o.move_type in ['out_invoice', 'out_refund']">
                     <table class="tblbordr" dir="rtl">
                         <thead>
                             <tr>
@@ -382,7 +320,7 @@
         <xpath expr="//h3" position="replace">
             <h3>
                 <div class="row">
-                    <div class="col-4" style="text-align:left">
+                    <div class="col-4"  style="text-align:left">
                         <span t-if="0">
                             Tax Invoice
                         </span>
@@ -392,7 +330,7 @@
                         <span t-elif="o.move_type == 'out_invoice' and o.state == 'cancel'">
                             Cancelled Invoice
                         </span>
-                        <span t-elif="o.move_type == 'out_refund' and o.state == 'posted'">
+                        <span t-elif="0">
                             Credit Note
                         </span>
                         <span t-elif="o.move_type == 'out_refund' and o.state == 'draft'">
@@ -408,7 +346,7 @@
                             Vendor Bill
                         </span>
                     </div>
-                    <div class="col-4 text-center" t-if="o.move_type != 'out_invoice'">
+                    <div class="col-4 text-center" t-if="o.move_type not in ['out_invoice', 'out_refund']">
                         <span t-if="o.name != '/'" t-field="o.name"/>
                     </div>
                     <div class="col-4" style="text-align:right">
@@ -421,7 +359,7 @@
                         <span t-elif="o.move_type == 'out_invoice' and o.state == 'cancel'">
                             فاتورة ملغاة
                         </span>
-                        <span t-elif="o.move_type == 'out_refund' and o.state == 'posted'">
+                        <span t-elif="0">
                             إشعار خصم
                         </span>
                         <span t-elif="o.move_type == 'out_refund' and o.state == 'draft'">
@@ -438,9 +376,83 @@
                         </span>
                     </div>
                 </div>
+
+
             </h3>
         </xpath>
     </template>
+    <template id="arabic_english_invoice_l10n_sa" inherit_id="l10n_gcc_invoice.arabic_english_invoice">
+        <xpath expr="//t[contains(@t-set, 'address')]" position="replace">
+            <style>
+                .tblbordr {
+                text-align: center;
+                border: 1px solid black;
+                margin: 10px;
+                background-color: white;
+                color: black;
+                width: 100%;
+                }
+                .right-align {
+                float: right;
+                }
+                .left-align {
+                float: left;
+                }
+            </style>
+            <div class="col-4 left-align" t-if="o.move_type in ['out_invoice', 'out_refund']">
+                <p>
+                    <img t-if="o.l10n_sa_qr_code_str" style="display:block;"
+                         t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', quote_plus(o.l10n_sa_qr_code_str), 200, 200)"/>
+                </p>
+            </div>
+            <div>
+
+                <div class="col-8 right-align" t-if="o.move_type in ['out_invoice', 'out_refund']">
+                    <table class="tblbordr" dir="rtl">
+                        <thead>
+                            <tr>
+                                <th>اسم العميل</th>
+                                <th>
+                                    <span t-esc="o.partner_id.display_name"/>
+                                </th>
+                                <th>Customer Name</th>
+                            </tr>
+                            <tr t-if="o.partner_id.street">
+                                <th>العنوان</th>
+                                <th>
+                                    <span t-esc="o.partner_id.street"/>
+                                </th>
+                                <th>Address</th>
+                            </tr>
+                            <tr t-if="o.partner_id.vat">
+                                <th>رقم التسجيل الضريبي</th>
+                                <th>
+                                    <span t-esc="o.partner_id.vat"/>
+                                </th>
+                                <th>Vat</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div t-else="">
+                    <t t-set="address">
+                        <address t-field="o.partner_id"
+                                 t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"
+                                 style="text-align: right"/>
+                        <div t-if="o.partner_id.vat" class="mt16" style="text-align: right">
+                            <t t-if="o.company_id.account_fiscal_country_id.vat_label"
+                               t-out="o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label"/>
+                            <t t-else="">Tax ID</t>:
+                            <span t-field="o.partner_id.vat"/>
+                        </div>
+                    </t>
+                </div>
+            </div>
+
+        </xpath>
+
+    </template>
+
 
     <!-- Inherit the report and link the custom paper format -->
     <record id="report_arabic_english_invoice_custom" model="ir.actions.report">
