@@ -184,7 +184,7 @@
                                     <span class="text-nowrap" t-field="line.price_subtotal"/>
                                 </td>
 
-                                <td class="text-end">
+                                <td class="text-end" style="white-space:nowrap;">
                                     <span t-out="', '.join(map(lambda x: (x.invoice_label or x.name), line.tax_ids))"
                                           id="line_tax_ids"/>
                                 </td>
