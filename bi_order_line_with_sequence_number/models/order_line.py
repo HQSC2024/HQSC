@@ -74,10 +74,10 @@ class StockMove(models.Model):
             record.mrp_sequence_no = number
             number += 1
 
-class MrpProduction(models.Model):
-    _inherit = 'mrp.production'
-
-    sequence = fields.Char(string='Sequence Number   ')
+# class MrpProduction(models.Model):
+#     _inherit = 'mrp.production'
+#
+#     sequence = fields.Char(string='Sequence Number   ')
 
 
 class PurchaseRequisition(models.Model):
