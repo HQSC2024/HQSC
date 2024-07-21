@@ -195,8 +195,9 @@
                                     <span class="text-nowrap" t-field="line.price_unit"/>
                                 </td>
                                 <td class="text-end">
-                                    <span t-if="float(line.quantity) == int(line.quantity)" t-field="line.quantity" t-options='{"widget": "float", "precision": 0}'/>
-                                    <span t-else=""  t-field="line.quantity"/>
+                                    <span t-if="float(line.quantity) == int(line.quantity)" t-field="line.quantity"
+                                          t-options='{"widget": "float", "precision": 0}'/>
+                                    <span t-else="" t-field="line.quantity"/>
                                     <span t-field="line.product_uom_id" groups="uom.group_uom"/>
                                 </td>
                                 <td name="account_invoice_line_name" class="text-end">
@@ -321,7 +322,7 @@
         <xpath expr="//h3" position="replace">
             <h3>
                 <div class="row">
-                    <div class="col-4"  style="text-align:left">
+                    <div class="col-4" style="text-align:left">
                         <span t-if="0">
                             Tax Invoice
                         </span>
@@ -399,6 +400,10 @@
                 .left-align {
                 float: left;
                 }
+                <!--                .page {-->
+                <!--                max-height: 100vh;-->
+                <!--                }-->
+
             </style>
             <div class="col-4 left-align" t-if="o.move_type in ['out_invoice', 'out_refund']">
                 <p>
@@ -455,11 +460,28 @@
     </template>
 
 
-    <!-- Inherit the report and link the custom paper format -->
+    <!-- Define a custom paper format -->
+    <record id="paperformat_custom" model="report.paperformat">
+        <field name="name">Custom Paper Format</field>
+        <field name="default" eval="False"/>
+        <field name="format">A4</field>
+<!--        <field name="page_height">297</field>-->
+<!--        <field name="page_width">210</field>-->
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">47</field>
+        <field name="margin_bottom">20</field>
+        <field name="margin_left">10</field>
+        <field name="margin_right">10</field>
+        <field name="header_spacing">45</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- Link the custom paper format to the report -->
     <record id="report_arabic_english_invoice_custom" model="ir.actions.report">
         <field name="name">Arabic-English Invoice Custom</field>
-        <field name="report_name">l10n_gcc_invoice.arabic_english_invoice</field>
+        <field name="report_name">account.report_invoice_with_payments</field>
         <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
         <field name="paperformat_id" ref="invoice_print_customize.paperformat_custom"/>
     </record>
 
