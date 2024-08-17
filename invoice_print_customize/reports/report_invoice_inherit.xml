@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!--    <template id="external_layout_boxed_inherit" inherit_id="web.external_layout_boxed">-->
-    <!--        <xpath expr="//div[contains(@class, 'col-6')]/img" position="replace">-->
-    <!--&lt;!&ndash;            <attribute name="style">max-height: 45px; max-width: 500px;</attribute>&ndash;&gt;-->
-    <!--        </xpath>-->
-    <!--    </template>-->
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//span[@name='order_note']/.." position="replace">
+<!--            <div>-->
+<!--                <span t-field="doc.note" t-attf-style="#{'text-align:justify;text-justify:inter-word;' if doc.company_id.terms_type != 'html' else ''}" name="order_note"/>-->
+<!--                <p t-if="not is_html_empty(doc.payment_term_id.note)">-->
+<!--                    <span t-field="doc.payment_term_id.note">The payment should also be transmitted with love</span>-->
+<!--                </p>-->
+<!--                <p t-if="doc.fiscal_position_id and not is_html_empty(doc.fiscal_position_id.sudo().note)" id="fiscal_position_remark">-->
+<!--                    <strong>Fiscal Position Remark:</strong>-->
+<!--                    <span t-field="doc.fiscal_position_id.sudo().note">No further requirements for this payment</span>-->
+<!--                </p>-->
+<!--            </div>-->
+        </xpath>
+    </template>
 
     <template id="external_layout_boxed_inherit" inherit_id="web.external_layout_boxed">
         <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
@@ -465,8 +474,8 @@
         <field name="name">Custom Paper Format</field>
         <field name="default" eval="False"/>
         <field name="format">A4</field>
-<!--        <field name="page_height">297</field>-->
-<!--        <field name="page_width">210</field>-->
+        <!--        <field name="page_height">297</field>-->
+        <!--        <field name="page_width">210</field>-->
         <field name="orientation">Portrait</field>
         <field name="margin_top">47</field>
         <field name="margin_bottom">20</field>
