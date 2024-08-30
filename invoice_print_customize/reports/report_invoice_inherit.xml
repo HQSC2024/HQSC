@@ -172,10 +172,12 @@
                 </thead>
                 <tbody class="invoice_tbody">
                     <t t-set="current_subtotal" t-value="0"/>
+                    <t t-set="seq" t-value="0"/>
                     <t t-set="lines"
                        t-value="o.invoice_line_ids.sorted(key=lambda l: (-l.sequence, l.date, l.move_name, -l.id), reverse=True)"/>
 
                     <t t-foreach="lines" t-as="line">
+                        <t t-set="seq" t-value="seq + 1"/>
                         <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"/>
                         <t t-set="current_total" t-value="current_subtotal + line.price_total"
                            t-if="o.tax_calculation_rounding_method == 'round_per_line'"/>
@@ -214,6 +216,9 @@
                                 </td>
                                 <td name="account_invoice_line_code" class="text-end">
                                     <span t-field="line.product_id.default_code"/>
+                                </td>
+                                <td name="account_invoice_line_seq" class="text-center">
+                                    <span t-esc="seq"/>
                                 </td>
 
                             </t>
