@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_allow_user1,allow.allow1,model_allow1,,1,0,0,0
+access_allow_user2,allow.allow1,model_allow1,allow.real_show_property_and_menu_Conf,1,1,1,1
+access_allow_user3,allow.allow1,model_allow1,allow.hide_feild_des,1,1,1,1
+access_owner_user4,owner.owner1,model_owner1,base.group_user,1,1,1,1
+access_owner_user5,owner.owner1,model_owner1,,1,1,1,1

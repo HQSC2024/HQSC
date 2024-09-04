@@ -2,22 +2,13 @@
 <odoo>
     <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
         <xpath expr="//span[@name='order_note']/.." position="replace">
-            <!--            <div>-->
-            <!--                <span t-field="doc.note" t-attf-style="#{'text-align:justify;text-justify:inter-word;' if doc.company_id.terms_type != 'html' else ''}" name="order_note"/>-->
-            <!--                <p t-if="not is_html_empty(doc.payment_term_id.note)">-->
-            <!--                    <span t-field="doc.payment_term_id.note">The payment should also be transmitted with love</span>-->
-            <!--                </p>-->
-            <!--                <p t-if="doc.fiscal_position_id and not is_html_empty(doc.fiscal_position_id.sudo().note)" id="fiscal_position_remark">-->
-            <!--                    <strong>Fiscal Position Remark:</strong>-->
-            <!--                    <span t-field="doc.fiscal_position_id.sudo().note">No further requirements for this payment</span>-->
-            <!--                </p>-->
-            <!--            </div>-->
         </xpath>
     </template>
 
     <template id="external_layout_boxed_inherit" inherit_id="web.external_layout_boxed">
-        <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">
-            <div t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+        <xpath expr="//div[@t-attf-class='header o_company_#{company.id}_layout']" position="replace">z
+            <div t-if="o._name == 'account.move' and o.move_type == 'out_invoice'"
+                 t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
                 <div>
                     <div class="row mb8">
                         <div class="col-6">
@@ -58,6 +49,46 @@
                     </div>
                 </div>
 
+            </div>
+            <div t-else="" t-attf-class="header o_company_#{company.id}_layout" t-att-style="report_header_style">
+                <div class="o_boxed_header">
+                    <div class="row mb8">
+                        <div class="col-6">
+                            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" alt="Logo"/>
+                        </div>
+                        <div class="col-6 text-end mb4">
+                            <div class="mt0 h4" t-if="company.report_header" t-field="company.report_header">Company
+                                tagline
+                            </div>
+                            <div name="company_address" class="float-end mb4">
+                                <ul class="list-unstyled" name="company_address_list">
+                                    <li t-if="company.is_company_details_empty">
+                                        <span t-field="company.partner_id"
+                                              t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'>
+                                            <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">
+                                                <strong>Company address block</strong>
+                                                <div>Contains the company address.</div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li t-else="">
+                                        <span t-field="company.company_details">
+                                            <div class="bg-light border-1 rounded h-100 d-flex flex-column align-items-center justify-content-center p-4 w-100 opacity-75 text-muted text-center">
+                                                <strong>Company details block</strong>
+                                                <div>Contains the company details.</div>
+                                            </div>
+                                        </span>
+                                    </li>
+                                    <li t-if="not forced_vat"/>
+                                    <li t-else="">
+                                        <t t-esc="company.country_id.vat_label or 'Tax ID'">Tax ID</t>:
+                                        <span t-esc="forced_vat">US12345671</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </xpath>
 
@@ -453,17 +484,20 @@
                         </table>
                     </div>
                     <div t-else="">
-                        <t t-set="address">
-                            <address t-field="o.partner_id"
-                                     t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"
-                                     style="text-align: right"/>
-                            <div t-if="o.partner_id.vat" class="mt16" style="text-align: right">
-                                <t t-if="o.company_id.account_fiscal_country_id.vat_label"
-                                   t-out="o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label"/>
-                                <t t-else="">Tax ID</t>:
-                                <span t-field="o.partner_id.vat"/>
-                            </div>
-                        </t>
+                        <br/><br/>
+                        <div class="row">
+                            <t t-set="address">
+                                <address t-field="o.partner_id"
+                                         t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"
+                                         style="text-align: right"/>
+                                <div t-if="o.partner_id.vat" class="mt16" style="text-align: right">
+                                    <t t-if="o.company_id.account_fiscal_country_id.vat_label"
+                                       t-out="o.company_id.account_fiscal_country_id.vat_label" id="inv_tax_id_label"/>
+                                    <t t-else="">Tax ID</t>:
+                                    <span t-field="o.partner_id.vat"/>
+                                </div>
+                            </t>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <record id="additional_contract_fields" model="ir.ui.view">
+            <field name="name">additional.contract.fields</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='department_id']" position="after">
+<!--            <xpath expr="//group/group[@name='salary']/div[@name='coach_id']" position="after">-->
+
+                    <field name="id_userss" />
+                    <field name="nature_work_allow"/>
+                    <field name="cost_living_allow"/>
+                    <field name="ticket_allow"/>
+                    <field name="vacation_allow"/>
+                    <field name="allowance_1"/>
+                    <field name="allowance_2"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
