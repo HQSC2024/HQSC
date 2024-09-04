@@ -1,0 +1,129 @@
+<odoo>
+    <data>
+
+
+        <record id="property_view_tree" model="ir.ui.view">
+            <field name="name">property tree</field>
+            <field name="model">allow1</field>
+            <field name="arch" type="xml">
+                <tree multi_edit="1" class="header_custom">
+                    <field name="first"/>
+                    <field name="ow_id"/>
+                    <field name="namee" optional="1"/>
+                    <field name="garden"/>
+                    <field name="descraption" groups="allow.hide_feild_des"/>
+                    <field name="selling_price"/>
+                    <field name="computed"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--  بداية تاج البحث-->
+        <record id="search_view_tree" model="ir.ui.view">
+            <field name="name">property search</field>
+            <field name="model">allow1</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="first"/>
+                    <field name="namee"/>
+                    <!-- بداية تاج الفلتر-->
+                    <filter name="is_garden" string="group garden" domain="[('garden','=','true')]"/>
+                    <!-- بداية فلتر الجروب باى-->
+                    <filter name="group_by_garden" string="group garden" context="{'group_by':'garden'}"/>
+                </search>
+            </field>
+        </record>
+        <!--  نهاية تاج البحث -->
+
+
+        <record id="view_allow_form" model="ir.ui.view">
+            <field name="name">view.allow.form</field>
+            <field name="model">allow1</field>
+            <field name="arch" type="xml">
+                <form string="Register Payment">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="first"/>
+                            <h1>
+                                <field name="first"/>
+                            </h1>
+                        </div>
+                        <group name="top_info">
+
+                            <group name="top_info_left" string="First group">
+
+                                <field name="first"/>
+                                <field name="namee"/>
+                                <field name="descraption"/>
+                                <field name="pstcode"/>
+                                <field name="numb"/>
+                                <field name="expected_price"/>
+                                <field name="selling_price"/>
+                                <field name="bedrooms"/>
+                                <field name="living_area"/>
+                                <field name="facades"/>
+                                <field name="garage"/>
+                                <field name="garden"/>
+                            </group>
+
+                            <group name="top_info_left" string="second group">
+                                <field name="date_of_birth"/>
+                                <field name="gardean_area"/>
+                                <field name="sales_date"/>
+                                <field name="is_late"/>
+                                <field name="garden_orientation"/>
+                                <field name="col1"/>
+                                <field name="col2"/>
+                                <field name="result"/>
+                                <field name="computed"/>
+                                <field name="total"/>
+                                <field name="ow_id"/>
+                                <field name="company_id"/>
+                                <field name="customer_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+
+                    <!--                    بدية لاضافة الشاطر فى الشاشة -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                    <!--                    نهاية لاضافة الشاطر فى الشاشة -->
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="propert_action" model="ir.actions.act_window">
+            <field name="name">Property</field>
+            <field name="res_model">allow1</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <record id="config" model="ir.actions.act_window">
+            <field name="name">Property</field>
+            <field name="res_model">allow1</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+
+        <menuitem
+                id="real" name="Reales" web_icon="allow,static\description\main.png"
+        />
+        <menuitem
+                id="pro_menu" name="Menu" parent="real" groups="allow.real_show_property_and_menu_Conf"
+        />
+        <menuitem
+                id="confi" name="Configuration" parent="real" action="config"
+                groups="allow.real_show_property_and_menu_Conf"
+        />
+        <menuitem
+                id="property_item" name="Show Property" groups="allow.real_show_property_and_menu_Conf"
+                parent="pro_menu" action="propert_action"
+        />
+    </data>
+</odoo>

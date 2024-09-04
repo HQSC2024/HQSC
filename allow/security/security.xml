@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    اخفاء واظهار منيو البروبيرتى  -->
+    <record id="real_show_property_and_menu_Conf" model="res.groups">
+        <field name="name">Show Property and Config Menu</field>
+    </record>
+    <record id="hide_feild_des" model="res.groups">
+        <field name="name">hide_des</field>
+    </record>
+    <!--    <record id="record_rule_by_user" model="ir.rule">-->
+    <!--        <field name="name">model.by.user </field>-->
+    <!--         <field name="model_id" ref="allow.owner_view_form"/>-->
+    <!--         <field name="domain_force" >[('create_uid','=', user.id)]</field>-->
+    <!--         <field name="perm_read" eval="true"/>-->
+    <!--         <field name="perm_write" eval="true"/>-->
+    <!--         <field name="perm_create" eval="true"/>-->
+    <!--         <field name="perm_unlink" eval="true"/>-->
+    <!--    </record>-->
+
+
+<!--    start create group and record rule -->
+    <record id="group_only_record_see_row" model="res.groups">
+            <field name="name">group_only_record_see</field>
+        </record>
+    <record id="only_record_see" model="ir.rule">
+        <field name="name">only record see</field>
+        <field name="model_id" ref="model_allow1"/>
+        <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('allow.group_only_record_see_row'))]"/>
+    </record>
+    <!--    End create group and record rule -->
+
+</odoo>

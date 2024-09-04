@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--        <record id="analytic_sales_add" model="ir.ui.view">-->
+<!--            <field name="name">analytic sales add</field>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--            <field name="model">sale.order</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="after">-->
+<!--                    <field name="analytic_account_id"/>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

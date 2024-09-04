@@ -1,0 +1,487 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* allow
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-12 13:27+0000\n"
+"PO-Revision-Date: 2024-07-12 13:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: allow
+#: model:ir.actions.report,print_report_name:allow.owner_report_all
+msgid "'Print Badge - %s' % (object.name).replace('/', '')"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "- Email:"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "About1"
+msgstr "عن الشركة 1"
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "About2"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__active
+msgid "Active"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__address
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "Address"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__allowance_1
+msgid "Allowance 1"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__allowance_2
+msgid "Allowance 2"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "Available"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__bedrooms
+msgid "Bedrooms"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__owner1__states__cancel
+msgid "Cancel"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__owner1__states__closed
+msgid "Closed"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__company_id
+msgid "Company"
+msgstr ""
+
+#. module: allow
+#: model:ir.ui.menu,name:allow.confi
+msgid "Configuration"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__cost_living_allow
+msgid "Cost Of Living Allowance"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__create_uid
+#: model:ir.model.fields,field_description:allow.field_owner1__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__create_date
+#: model:ir.model.fields,field_description:allow.field_owner1__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__customer_id
+msgid "Customer"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__date_of_birth
+msgid "Date Of Birth"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__descraption
+msgid "Descraption"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__display_name
+#: model:ir.model.fields,field_description:allow.field_owner1__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__owner1__states__done
+msgid "Done"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__owner1__states__draft
+msgid "Draft"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__allow1__garden_orientation__east
+msgid "East"
+msgstr ""
+
+#. module: allow
+#: model:ir.model,name:allow.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__expected_price
+msgid "Expected Price"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__facades
+#: model:ir.model.fields,field_description:allow.field_owner1__facades
+msgid "Facades"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__first
+msgid "First"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__garage
+msgid "Garage"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__gardean_area
+msgid "Gardean Area"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__garden
+msgid "Garden"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__garden_orientation
+msgid "Garden Orientation"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "General Information"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__id
+#: model:ir.model.fields,field_description:allow.field_owner1__id
+msgid "ID"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__is_late
+msgid "Is Late"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1____last_update
+#: model:ir.model.fields,field_description:allow.field_owner1____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__write_uid
+#: model:ir.model.fields,field_description:allow.field_owner1__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__write_date
+#: model:ir.model.fields,field_description:allow.field_owner1__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "Logo"
+msgstr ""
+
+#. module: allow
+#: model:ir.ui.menu,name:allow.pro_menu
+msgid "Menu"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__name
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "Name"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__namee
+msgid "Namee"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__nature_work_allow
+msgid "Nature Of Work Allowance"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__allow1__garden_orientation__north
+msgid "North"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__numb
+msgid "Numb"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__living_area
+#: model:ir.model.fields,field_description:allow.field_owner1__living_area
+msgid "Number of seats"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__prop_ids
+msgid "Owner User"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "Page:<span class=\"page\"/>/<span class=\"topage\"/>"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__phone
+msgid "Phone"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "Phone:"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "Prop"
+msgstr ""
+
+#. module: allow
+#: model:ir.actions.act_window,name:allow.config
+#: model:ir.actions.act_window,name:allow.propert_action
+msgid "Property"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__pstcode
+msgid "Pstcode"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__owner1__states__ready
+msgid "Ready"
+msgstr ""
+
+#. module: allow
+#: model:ir.ui.menu,name:allow.real
+msgid "Reales"
+msgstr "موديول المعلم"
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__sales_date
+msgid "Sales Date"
+msgstr ""
+
+#. module: allow
+#: model:ir.model,name:allow.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "بند أمر المبيعات"
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__selling_price
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "Selling Price"
+msgstr ""
+
+#. module: allow
+#: model:ir.ui.menu,name:allow.owner_item
+msgid "Show Owner"
+msgstr ""
+
+#. module: allow
+#: model:ir.ui.menu,name:allow.property_item
+msgid "Show Property"
+msgstr ""
+
+#. module: allow
+#: model:res.groups,name:allow.real_show_property_and_menu_Conf
+msgid "Show Property and Config Menu"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "Sold"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__allow1__garden_orientation__south
+msgid "South"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_owner1__states
+msgid "States"
+msgstr ""
+
+#. module: allow
+#: model:ir.actions.server,name:allow.id_closed
+msgid "States To Closed"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.constraint,message:allow.constraint_owner1_unique_name
+msgid "The expected name must be strictly positive."
+msgstr ""
+
+#. module: allow
+#: model:ir.model.constraint,message:allow.constraint_owner1_unique_phone
+msgid "The expected phone must be strictly positive."
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__ticket_allow
+msgid "Ticket Allowance"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_allow1__total
+msgid "Total"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__vacation_allow
+msgid "Vacation Allowance"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "Website:"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields.selection,name:allow.selection__allow1__garden_orientation__west
+msgid "West"
+msgstr ""
+
+#. module: allow
+#: model:ir.model,name:allow.model_allow1
+msgid "allow1"
+msgstr ""
+
+#. module: allow
+#: model:ir.actions.report,name:allow.allow1_report_all
+msgid "allow1 report"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,field_description:allow.field_hr_employee__id_userss
+msgid "employeess"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "first"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.search_view_tree
+msgid "group garden"
+msgstr ""
+
+#. module: allow
+#: model:res.groups,name:allow.group_only_record_see_row
+msgid "group_only_record_see"
+msgstr ""
+
+#. module: allow
+#: model:res.groups,name:allow.hide_feild_des
+msgid "hide_des"
+msgstr ""
+
+#. module: allow
+#: model:ir.model.fields,help:allow.field_allow1__first
+msgid "insert first"
+msgstr ""
+
+#. module: allow
+#: model:ir.actions.report,name:allow.owner_report_all
+msgid "owner report"
+msgstr ""
+
+#. module: allow
+#: model:ir.model,name:allow.model_owner1
+#: model:ir.model.fields,field_description:allow.field_allow1__ow_id
+msgid "owner1"
+msgstr ""
+
+#. module: allow
+#: model:ir.actions.act_window,name:allow.owner_action
+msgid "owner2"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+#: model_terms:ir.ui.view,arch_db:allow.owner_report_template
+msgid "print report"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "prop"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.allow_report_template
+msgid "selling_price"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "set to cancel"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "set to done"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "set to draft"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "set to ready"
+msgstr ""
+
+#. module: allow
+#: model_terms:ir.ui.view,arch_db:allow.owner_view_form
+msgid "بداية الكلام"
+msgstr ""

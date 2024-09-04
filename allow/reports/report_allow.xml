@@ -1,0 +1,116 @@
+<odoo>
+
+    <record id="allow1_report_all" model="ir.actions.report">
+        <field name="name">allow1 report</field>
+        <field name="model">allow1</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">allow.allow_report_template</field>
+        <field name="report_file">allow.allow_report_template</field>
+        <field name="print_report_name"></field>
+        <field name="binding_model_id" ref="model_allow1"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="allow_report_template">
+
+        <!--        <t t-call="web.external_layout">-->
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <!-- فائدة الالسطر التالى لاسترجاع قيم من الداتا بيز ونرمز له بحرف o-->
+                <t t-foreach="docs" t-as="o">
+                    <h1>print report</h1>
+                    <style>
+                        table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        }
+                        th, td {
+                        text-align: left;
+                        padding: 8px;
+                        }
+                        tr:nth-child(even){background-color: #f2f2f2}
+                        th {
+                        background-color: #04AA6D;
+                        color: white;
+                        }
+                    </style>
+                    <div class="header">
+                        <div class="text-center">
+                            <div class="row">
+
+
+                                <div class="col-6">
+                                    <span t-field="o.company_id.name"/>
+                                    <span t-field="o.company_id.street"/>
+                                    <br/>
+                                    <span t-field="o.customer_id.name"/>
+                                </div>
+                                <div class="col-5">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         class="float-right" alt="Logo"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <th colspan="6">General Information</th>
+                        </thead>
+                        <tbody>
+                            <td>first</td>
+                            <td>
+                                <t t-esc="o.first"/>
+                            </td>
+                            <td>selling_price</td>
+                            <td>
+                                <t t-esc="o.selling_price"/>
+                            </td>
+                            <td>prop</td>
+                            <td>
+                                <t t-esc="o.garden_orientation"/>
+                            </td>
+                        </tbody>
+
+                    </table>
+
+                    <br/>
+
+                    <div class="footer">
+                        <div class="text-center" style="border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-3">
+                                    <ul class="list-inline">
+                                        <li t-if="o.company_id.phone">Phone:
+                                            <span t-field="o.company_id.phone"/>
+                                            - Email:
+                                            <span t-field="o.company_id.email"/>
+                                        </li>
+                                        <li t-if="o.company_id.website">Website:
+                                            <span t-field="o.company_id.website"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>Page:<span class="page"/>/
+                                            <span class="topage"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <span t-field="o.company_id.name"/>
+                                </div>
+                                <div class="col-5">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         class="float-right" alt="Logo"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </t>
+            </div>
+            <!--            </t>-->
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,174 @@
+<odoo>
+
+    <record id="allow1_report_payment_view" model="ir.actions.report">
+        <field name="name">Web payment report</field>
+        <field name="model">allow1</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">allow.allow_report_payment</field>
+        <field name="report_file">allow.allow_report_template</field>
+        <field name="print_report_name"></field>
+        <field name="binding_model_id" ref="model_allow1"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="allow_report_payment">
+
+        <!--        <t t-call="web.external_layout">-->
+        <t t-call="web.basic_layout">
+            <div class="page">
+                <!-- فائدة الاسطر التالى لاسترجاع قيم من الداتا بيز ونرمز له بحرف o-->
+                <t t-foreach="docs" t-as="o">
+                    <div class="header">
+                        <div class="text-center" style="border-bottom: 6px solid black;">
+                            <pre></pre>
+                            <div class="row">
+                                <div class="col-3">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <span t-field="o.company_id.name"/>
+                                            <span t-field="o.company_id.street"/>
+                                            <span t-field="o.company_id.street2"/>
+                                            <span t-field="o.company_id.city"/>
+                                            <span t-field="o.company_id.state_id"/>
+                                            <span t-field="o.company_id.country_id"/>
+                                        </li>
+                                        <li>
+                                            Vat:
+                                            <span t-field="o.company_id.vat"/>
+                                            company_registry:
+                                            <span t-field="o.company_id.company_registry"/>
+                                        </li>
+                                        <li>
+                                            <span t-field="o.company_id.phone"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                    <ul class="list-inline">
+                                        <li>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-2">
+                                </div>
+                                <div class="col-5">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         class="float-right" width="150" height="150"
+                                         style="img { margin-left: auto;margin-right: auto;}; padding: 0px 0px 0px 0px;
+                    ;block" alt="Logo"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <h1>print report</h1>
+                    <style>
+                        table {
+                        border-collapse: collapse;
+                        width: 100%;
+                        }
+                        th, td {
+                        text-align: left;
+                        padding: 8px;
+                        border: 1px solid black;
+                        }
+                        tr:nth-child(even){background-color: #777765};hover {background-color: #D6EEEE;}
+                        th {
+                        background-color: #04AA6D;
+                        color: #66yuuf;
+                        }
+                    </style>
+                    <table>
+                        <thead>
+                            <th colspan="6">General Information</th>
+                        </thead>
+                        <tbody>
+                            <tr>first11</tr>
+                            <td>
+                                <!--<t t-esc="o.first"/>-->
+                            </td>
+
+
+                            <tr>
+                                <th>first</th>
+                                <th>namee</th>
+                                <th>Pstcode</th>
+                                <th>Expected Price</th>
+                                <th>Selling Price</th>
+                                <th>Computed</th>
+                                <th>Total</th>
+
+                            </tr>
+                            <tr>
+<!--                                <td><span t-field="o.first"/></td>-->
+<!--                                <td><span t-field="o.namee"/></td>-->
+<!--                                <td><span t-field="o.pstcode"/></td>-->
+<!--                                <td><span t-field="o.expected_price"/></td>-->
+<!--                                <td><span t-field="o.selling_price"/></td>-->
+<!--                                <td><span t-field="o.computed"/></td>-->
+<!--                                <td><span t-field="o.total"/></td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <br/>
+
+
+                    <div class="footer">
+                        <div class="text-center" style="border-top: 1px solid black;">
+                            <div class="row">
+                                <div class="col-3">
+                                    <ul class="list-inline">
+                                        <li>
+                                            <span t-field="o.company_id.name"/>
+                                            <span t-field="o.company_id.street"/>
+                                            <span t-field="o.company_id.street2"/>
+                                            <span t-field="o.company_id.city"/>
+                                            <span t-field="o.company_id.state_id"/>
+                                            <span t-field="o.company_id.country_id"/>
+                                        </li>
+                                        <li>
+                                            Vat:
+                                            <span t-field="o.company_id.vat"/>
+                                            company_registry:
+                                            <span t-field="o.company_id.company_registry"/>
+                                        </li>
+                                        <li>
+                                            <span t-field="o.company_id.phone"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <ul class="list-inline">
+                                        <li>Page:<span class="page"/>/
+                                            <span class="topage"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <br/>
+                                <br/>
+
+                                <div class="col-5">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"
+                                         class="float-right" width="150" height="150"
+                                         style="img { margin-left: auto;margin-right: auto;}; padding: 0px 0px 0px 0px;
+                    ;block" alt="Logo"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </t>
+            </div>
+            <!--            </t>-->
+        </t>
+    </template>
+
+
+</odoo>
