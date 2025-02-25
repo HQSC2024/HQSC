@@ -239,7 +239,7 @@
                                     <span t-field="line.product_uom_id" groups="uom.group_uom"/>
                                 </td>
                                 <td name="account_invoice_line_name" class="text-end">
-                                    <span t-field="line.product_id.name"/>
+                                    <span t-field="line.name"/>
                                 </td>
                                 <td name="account_invoice_line_code" class="text-end">
                                     <span t-field="line.product_id.default_code"/>
