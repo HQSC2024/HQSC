@@ -251,7 +251,7 @@
                             </t>
                             <t t-if="line.display_type == 'line_section'">
                                 <td colspan="99">
-                                    <span t-field="line.name" t-options="{'widget': 'text'}"/>
+                                    <span t-field="line.product_id.name" t-options="{'widget': 'text'}"/>
                                 </td>
                                 <t t-set="current_section" t-value="line"/>
                                 <t t-set="current_subtotal" t-value="0"/>
