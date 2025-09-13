@@ -286,11 +286,11 @@
                     <table class="tblbordr" dir="rtl">
                         <thead>
                             <tr>
-                                <th>رقم الفاتورة</th>
+                                <th> فاتورة ضربية رقم </th>
                                 <th>
                                     <span t-field="o.name"/>
                                 </th>
-                                <th>Invoice Number</th>
+                                <th>Tax Invoice Number</th>
                             </tr>
                             <tr>
                                 <th>تاريخ الفاتورة</th>
