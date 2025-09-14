@@ -286,7 +286,7 @@
                     <table class="tblbordr" dir="rtl">
                         <thead>
                             <tr>
-                                <th> فاتورة ضربية رقم </th>
+                                <th> فاتورة ضريبية رقم </th>
                                 <th>
                                     <span t-field="o.name"/>
                                 </th>
